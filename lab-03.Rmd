@@ -1,0 +1,56 @@
+---
+title: "Lab 03: Nobel Laureates"
+subtitle: ""
+author: "Group member names here"
+date: "due September 20, 11:59 PM"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_section: false
+    highlight: tango
+    theme: "cosmo"
+link-citations: yes
+---
+
+# Load Packages
+
+```{r load-packages, message = FALSE, warning = FALSE}
+
+``` 
+
+# Load Data
+```{r load-data, message = FALSE}
+
+```
+
+
+# Exercise 1
+
+
+
+# Exercise 2
+
+```{r ex-2}
+```
+
+# Exercise 3
+
+```{r ex-3}
+```
+
+# Exercise 4
+
+```{r ex-4}
+```
+
+# Exercise 5
+
+```{r ex-5}
+```
+
+# Exercise 6
+
+```{r ex-6}
+```
+

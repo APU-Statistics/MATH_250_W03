@@ -1,0 +1,180 @@
+---
+title: "NYC flights - data wrangling"
+subtitle: "due Thursday, September 15 at 4:20pm"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_section: false
+    highlight: tango
+    theme: "cosmo"
+link-citations: yes
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r load-pkg, message = FALSE}
+library(tidyverse)
+library(nycflights13)
+```
+
+To demonstrate data wrangling we will use a dataset of characteristics of all flights departing from New York City (JFK, LGA, EWR) in 2013. We will use the `flights` data frame that comes from the `nycflights13` package. 
+
+We first explore the data a bit. Examine the documentation as well.
+
+```{r}
+glimpse(flights)
+```
+
+# Exercises
+
+Practice using `dplyr` verbs to perform each of the following tasks. 
+
+# `select()`
+
+1. Select only the departure delay and arrival delay columns, and store this into a new object called delays
+
+```{r}
+
+```
+
+1. Select all variables in `flights`, excluding departure delays
+
+```{r}
+
+```
+
+1. Select just the first three variables in `flights`
+
+```{r}
+
+```
+
+# `arrange()`
+
+4. Arrange the `flights` data by descending departure delays, with large departure delays on top.
+
+```{r}
+
+```
+
+# `slice()`
+
+5. Select (`slice`) the first 5 rows of `flights`
+
+```{r}
+
+```
+
+6. Combine `arrange` and `slice` to select the 5 flights with the longest departure delays
+
+```{r}
+
+```
+
+
+# `filter()`
+
+7. Select all rows where the destination airport is "LAX"
+
+```{r}
+
+```
+
+8. Select all rows where the destination airport is "LAX" and the arrival delay is less than 0.
+
+```{r}
+
+```
+
+9. Select all rows where the destination airport is "LAX", "BUR", or "LGB" AND the departure or the arrival delay is negative. 
+
+```{r}
+
+```
+
+
+# `mutate()`
+
+10. `airtime` is provided in minutes. Create a new variable called `hours` that coverts `airtime` to hours. Make sure to save this new variable by overwriting the `flights` dataframe.
+
+```{r}
+
+```
+
+11. Create a new variable called `mph` that computes the miles traveled (`distance`) per hour. Make sure to save this variable.
+
+```{r}
+
+```
+
+12. Create a new variable called `on_time`  that is `TRUE` if the flight is on time and `FALSE` if it is not. Make sure to save this variable. 
+
+```{r}
+
+```
+
+# `summarise()` and `group_by()`
+
+13. Calculate the average departure delay
+
+```{r}
+
+```
+
+14. Calculate the average departure delay for each month
+
+```{r}
+
+```
+
+15. Count the number of on-time flights for each month
+
+```{r}
+
+```
+
+
+16. Compute the proportion of flights that are on-time for each month
+
+```{r}
+
+```
+
+17. In addition to the proportion on time for each month, also find the maximum delay, median delay, and the count of flights in each month.
+
+```{r}
+
+```
+
+18. What is the proportion on time for flights traveling to "LAX", "BUR", and "LGB"?
+
+```{r}
+
+```
+
+# More practice
+
+19. Create a new dataset that only contains flights that do not have a missing departure time. Include the columns `year`,` month`, `day`, `dep_time`, `dep_delay`, and `dep_delay_hours` (the departure delay in hours). Note you may need to use `mutate()` to make one or more of these variables.
+
+```{r}
+
+```
+
+20. For each airplane (uniquely identified by `tailnum`), use a `group_by()` paired with `summarize()` to find the sample size, mean, and standard deviation of flight distances. Then, pick off the top 5 and bottom 5 airplanes in terms of mean distance traveled per flight.
+
+```{r}
+
+```
+
+
+# Submission
+
+To submit, you need to export your .html document from RStudio Cloud and then upload it to the AE 03 assignment on Canvas. Refer back to [Lab 01](https://kgfitzgerald.github.io/APU_MATH_250/labs/lab-01-hello-r.html) for detailed instructions on how to export and submit your assignment. 
+
+# Grading (10 pts)
+ 
+Application exercises are graded on completion. You will receive full credit if you turn in the .html on time and a reasonable attempt was made on each exercise. 
+
+
